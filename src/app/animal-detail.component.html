@@ -1,0 +1,22 @@
+<div *ngIf="selectedAnimalDetails" class="card">
+  <div class="card-header">
+    <h4>{{selectedAnimalDetails.name}}</h4>
+    <a href="#" class="btn btn-danger" (click)="backButton()">X</a>
+  </div>
+
+  <div class="card-block">
+    <h5 class="card-title">{{selectedAnimalDetails.species}}</h5>
+    <div class="edit-hidden">
+      <label>Name:</label><input class="details-mode" type="text" [(ngModel)]="selectedAnimalDetails.name">
+      <label>Species:</label><input class="details-mode" type="text" [(ngModel)]="selectedAnimalDetails.species">
+    </div>
+    <label>Age:</label><input class="details-mode" type="number" [(ngModel)]="selectedAnimalDetails.age" readonly><br>
+    <label>Diet:</label><input class="details-mode" type="text" [(ngModel)]="selectedAnimalDetails.diet" readonly><br>
+    <label>Zoo Location:</label><input class="details-mode" type="text" [(ngModel)]="selectedAnimalDetails.location" readonly><br>
+    <label>Amount of Caretakers:</label><input class="details-mode" type="number" [(ngModel)]="selectedAnimalDetails.caretakers" readonly><br>
+    <label>Sex:</label><input class="details-mode" type="text" [(ngModel)]="selectedAnimalDetails.sex" readonly><br>
+    <label>Likes:</label><input class="details-mode" type="text" [(ngModel)]="selectedAnimalDetails.likes" readonly><br>
+    <label>Dislikes:</label><input class="details-mode" type="text" [(ngModel)]="selectedAnimalDetails.dislikes" readonly><br>
+    <a href="#" class="delete-button" (click)="deleteClicked(selectedAnimalDetails)">Remove Animal</a>
+  </div>
+</div>

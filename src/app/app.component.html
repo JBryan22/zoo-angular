@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row">
+    <h1>Jesse's Wildlife Sanctuary</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a href="#" class="card add-new btn btn-default" (click)="addNewAnimalClicked()">+</a>
+      <animal-new [addNewAnimalInput]="addNewAnimal" (newAnimalSender)="addNewAnimal($event)" (backButtonSender)="cancelNewAction()"></animal-new>
+      <animal-list [animalList]="animals" (cancelClickSender)="cancelDetails()" (detailsClickSender)="detailsClicked($event)" (addNewClickSender)="addNewAnimalClicked()"></animal-list>
+    </div>
+    <div class="col-md-6">
+      <animal-detail [selectedAnimalDetails]="selectedAnimal" (deleteClickSender)="deleteAnimal($event)" (backClickSender)="cancelDetails()"></animal-detail>
+    </div>
+  </div>
+</div>

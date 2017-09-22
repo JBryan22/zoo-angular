@@ -1,0 +1,25 @@
+<div *ngIf="addNewAnimalInput" class="card">
+  <h4 class="card-header">New Animal Details</h4>
+  <div class="card-block">
+    <label>Name:</label>
+    <input #name type="text"><br>
+    <label>Species:</label>
+    <input #species type="text"><br>
+    <label>Age:</label>
+    <input #age type="number"><br>
+    <label>Diet:</label>
+    <input #diet type="text"><br>
+    <label>Zoo Location:</label>
+    <input #location type="text"><br>
+    <label>Caretakers Needed:</label>
+    <input #caretakers type="number"><br>
+    <label>Sex:</label>
+    <input #sex type="text"><br>
+    <label>Likes:</label>
+    <input #likes type="text"><br>
+    <label>Dislikes:</label>
+    <input #dislikes type="text"><br>
+    <a href="#" class="btn btn-primary" (click)="createNewAnimal(name.value, species.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value)">Add</a>
+    <a href="#" class="btn btn-danger" (click)="backButtonClicked()">Cancel</a>
+  </div>
+</div>

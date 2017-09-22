@@ -1,0 +1,13 @@
+<div class="filters">
+  <button class="btn btn-primary" (click)="filterByAge('all')">All Animals</button>
+  <button class="btn btn-primary" (click)="filterByAge('young')">Young Animals</button>
+  <button class="btn btn-primary" (click)="filterByAge('mature')">Mature Animals</button>
+</div>
+
+<div class="card" *ngFor="let animal of animalList | age:filterByAgeOption">
+  <div class="card-block">
+    <h4 class="card-title">{{animal.name}}</h4>
+    <h6 class="card-subtitle text-muted">{{animal.species}}</h6>
+    <a href="#" class="btn btn-primary details-button" (click)="detailsButtonHasBeenClicked(animal)">Details/Edit</a>
+  </div>
+</div>
