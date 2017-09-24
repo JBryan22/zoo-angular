@@ -8,12 +8,12 @@ import { Animal } from './animal.model';
 
 export class AnimalListComponent {
   @Input() animalList: Animal[];
+  @Input() filterList: string;
   @Output() detailsClickSender = new EventEmitter();
   @Output() cancelClickSender = new EventEmitter();
   @Output() deleteClickSender = new EventEmitter();
   @Output() addNewClickSender = new EventEmitter();
 
-  filterByAgeOption = 'all';
 
   detailsButtonHasBeenClicked(selectedAnimal: Animal) {
     this.detailsClickSender.emit(selectedAnimal);
@@ -31,7 +31,5 @@ export class AnimalListComponent {
     this.addNewClickSender.emit();
   }
 
-  filterByAge(filterBy: string) {
-    this.filterByAgeOption = filterBy;
-  }
+
 }

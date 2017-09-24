@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AnimalListComponent } from './animal-list.component';
 import { AnimalNewComponent } from './animal-new.component';
 import { AnimalDetailComponent } from './animal-detail.component';
+import { AgePipe } from './age.pipe';
 
 import { AppComponent } from './app.component';
 
@@ -13,7 +14,8 @@ import { AppComponent } from './app.component';
     AppComponent,
     AnimalListComponent,
     AnimalNewComponent,
-    AnimalDetailComponent
+    AnimalDetailComponent,
+    AgePipe
   ],
   imports: [
     BrowserModule,

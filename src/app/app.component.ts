@@ -9,14 +9,15 @@ import { Animal } from './animal.model';
 export class AppComponent {
   animals: Animal[] = [
     new Animal('Elephant', 'Ellie', 22, 'Herbivore', 'Safari Zone', 8, 'Female', ['Eating', 'Mud baths', 'Playing in the water'], ['Poachers', 'Being alone']),
-    new Animal('Tiger', 'Tony', 22, 'Carnivore', 'Jungle Area', 8, 'Male', ['Eating', 'Sleeping', 'Running', 'Play fighting'], ['Poachers', 'Loud noises']),
-    new Animal('Cheetah', 'Chester', 22, 'Carnivore', 'Safari Zone', 8, 'Male', ['Running', 'Play fighting'], ['Poachers']),
-    new Animal('Brown Bear', 'Cindy', 22, 'Omnivore', 'Large Mammal', 8, 'Female', ['Play fighting', 'Eating'], ['People near her kids']),
-    new Animal('Arctic Fox', 'Moon', 22, 'Carnivore', 'Northern Trail', 8, 'Female', ['cool shade', 'sleeping'], ['Loud noises'])
+    new Animal('Tiger', 'Tony', 2, 'Carnivore', 'Jungle Area', 8, 'Male', ['Eating', 'Sleeping', 'Running', 'Play fighting'], ['Poachers', 'Loud noises']),
+    new Animal('Cheetah', 'Chester', 5, 'Carnivore', 'Safari Zone', 8, 'Male', ['Running', 'Play fighting'], ['Poachers']),
+    new Animal('Brown Bear', 'Cindy', 8, 'Omnivore', 'Large Mammal', 8, 'Female', ['Play fighting', 'Eating'], ['People near her kids']),
+    new Animal('Arctic Fox', 'Moon', 1, 'Carnivore', 'Northern Trail', 8, 'Female', ['cool shade', 'sleeping'], ['Loud noises'])
   ]
 
   selectedAnimal = null;
   addNewAnimal = false;
+  filterByAgeOption = 'all';
 
   detailsClicked(clickedAnimal: Animal) {
     this.selectedAnimal = clickedAnimal;
@@ -35,7 +36,7 @@ export class AppComponent {
   }
 
   addNewAnimalClicked() {
-    this.addNewAnimal = true;
+    this.addNewAnimal = !this.addNewAnimal;
   }
 
   addNewAnimalAction(newAnimal: Animal) {
@@ -45,5 +46,9 @@ export class AppComponent {
 
   cancelNewAction() {
     this.addNewAnimal = false;
+  }
+
+  filterByAge(filterBy: string) {
+    this.filterByAgeOption = filterBy;
   }
 }
