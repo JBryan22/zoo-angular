@@ -6,14 +6,14 @@
     <div class="col-md-6">
 
       <div class="filters">
-        <button class="btn btn-primary" (click)="filterByAge('all')">All Animals</button>
-        <button class="btn btn-primary" (click)="filterByAge('young')">Young Animals</button>
-        <button class="btn btn-primary" (click)="filterByAge('mature')">Mature Animals</button>
+        <button class="btn btn-primary filter-button" (click)="filterByAge('all')">All Animals</button>
+        <button class="btn btn-primary filter-button" (click)="filterByAge('young')">Young Animals</button>
+        <button class="btn btn-primary filter-button" (click)="filterByAge('mature')">Mature Animals</button>
       </div>
 
       <a href="#" class="card add-new btn btn-default" (click)="addNewAnimalClicked()">+</a>
 
-      <animal-new [addNewAnimalInput]="addNewAnimal" (newAnimalSender)="addNewAnimal($event)" (backButtonSender)="cancelNewAction()"></animal-new>
+      <animal-new [addNewAnimalInput]="addNewAnimal" (newAnimalSender)="addNewAnimalAction($event)" (backButtonSender)="cancelNewAction()"></animal-new>
 
       <animal-list [animalList]="animals" [filterList]="filterByAgeOption" (cancelClickSender)="cancelDetails()" (detailsClickSender)="detailsClicked($event)" (addNewClickSender)="addNewAnimalClicked()"></animal-list>
 
